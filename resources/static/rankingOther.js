@@ -31,7 +31,7 @@
 		var i;
 		for (i = 0; i < otherQIDarray.length; ++i) {
 			if ( $( '#'+otherQIDarray[i] ).val() !== '' ) 
-				$(this).parents('.controlContainer').find('.statement[data-index="'+otherRIDarray[i]+'"] .otherText').val( $( '#'+otherQIDarray[i] ).val() );
+				$(this).parents('.controlContainer').find('.statement[data-index="'+otherRIDarray[i]+'"] .otherText').val( $( '#'+otherQIDarray[i] ).val()).show();
 			$( '#'+otherQIDarray[i] ).hide();
 		}
 		
