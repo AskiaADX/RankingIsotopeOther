@@ -22,6 +22,8 @@
 		}
 		
 		var dkActivated = options.dkActivated;
+		var animatedResponses = options.animatedResponses;
+		var layout = options.layout;
 		var dkselected = false;
 		
 		// Other
@@ -141,7 +143,7 @@
 				}
 
 				// Update position using isotope
-				if(!dkselected){
+				if((!dkselected && animatedResponses) || (!dkselected && layout === "fitRows")){
 					$container.isotope('updateSortData', $container.find('.statement'));
 					$container.isotope(istopeOptions);
 				}
@@ -200,8 +202,10 @@
 				}
 
 				// Update position using isotope
-				$container.isotope('updateSortData', $container.find('.statement'));
-				$container.isotope(istopeOptions);
+				if (animatedResponses || layout === "fitRows") {
+					$container.isotope('updateSortData', $container.find('.statement'));
+					$container.isotope(istopeOptions);
+				}
 			});
 			
 		}
@@ -280,7 +284,7 @@
 		}
 		
 		//alert(dkselected);
-		if(!dkselected){
+		if((!dkselected && animatedResponses) || (!dkselected && layout === "fitRows")){
 			$container.isotope(istopeOptions);
 		}	
 		//$container.delegate('.statement', 'click', selectStatement);
@@ -349,8 +353,10 @@
 			}
 			
 			// Update position using isotope
-			$container.isotope('updateSortData', $container.find('.statement'));
-			$container.isotope(istopeOptions);
+			if (animatedResponses || layout === "fitRows") {
+				$container.isotope('updateSortData', $container.find('.statement'));
+				$container.isotope(istopeOptions);
+			}
 		}
 		
 		function rankdown(e) {
@@ -402,8 +408,10 @@
 			}
 			
 			// Update position using isotope
-			$container.isotope('updateSortData', $container.find('.statement'));
-			$container.isotope(istopeOptions);
+			if (animatedResponses || layout === "fitRows") {
+				$container.isotope('updateSortData', $container.find('.statement'));
+				$container.isotope(istopeOptions);
+			}
 		}
 		
 		// Assign hover function
