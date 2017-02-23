@@ -1,4 +1,4 @@
-﻿(function ($) {
+(function ($) {
 	"use strict";
 
 	$.fn.adcRanking = function adcRanking(options) {
@@ -147,7 +147,9 @@
 					$container.isotope('updateSortData', $container.find('.statement'));
 					$container.isotope(istopeOptions);
 				}
-				
+                if (window.askia) {
+                    askia.triggerAnswer();
+                }
 			}
 			
 			/*if ( showRankMoveControls && (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i)) || (navigator.userAgent.match(/iPad/i)) ) {
@@ -357,6 +359,9 @@
 				$container.isotope('updateSortData', $container.find('.statement'));
 				$container.isotope(istopeOptions);
 			}
+            if (window.askia) {
+                askia.triggerAnswer();
+            }
 		}
 		
 		function rankdown(e) {
@@ -412,6 +417,9 @@
 				$container.isotope('updateSortData', $container.find('.statement'));
 				$container.isotope(istopeOptions);
 			}
+            if (window.askia) {
+                askia.triggerAnswer();
+            }
 		}
 		
 		// Assign hover function
@@ -423,6 +431,9 @@
 		
 		function writeText() {
 			$( '#'+otherQIDarray[parseInt($(this).data('id'))-1] ).val( $(this).val() );
+            if (window.askia) {
+                askia.triggerAnswer();
+            }
 		
 		}
 		
