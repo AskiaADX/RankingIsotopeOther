@@ -7,6 +7,7 @@
 		(options.width = options.width || "auto");
 		(options.height = options.height || "auto");
 		(options.setMax = options.setMax || $(this).children('.statement').size());
+        (options.currentQuestion = options.currentQuestion || '');
 		
 		var otherQIDarray = options.otherQID.split(","),
 			otherRIDarray = options.otherRID.split(",");
@@ -147,7 +148,10 @@
 					$container.isotope('updateSortData', $container.find('.statement'));
 					$container.isotope(istopeOptions);
 				}
-                if (window.askia) {
+                if (window.askia 
+                    && window.arrLiveRoutingShortcut 
+                    && window.arrLiveRoutingShortcut.length > 0
+                    && window.arrLiveRoutingShortcut.indexOf(options.currentQuestion) >= 0) {
                     askia.triggerAnswer();
                 }
 			}
@@ -359,7 +363,10 @@
 				$container.isotope('updateSortData', $container.find('.statement'));
 				$container.isotope(istopeOptions);
 			}
-            if (window.askia) {
+            if (window.askia 
+                && window.arrLiveRoutingShortcut 
+                && window.arrLiveRoutingShortcut.length > 0
+                && window.arrLiveRoutingShortcut.indexOf(options.currentQuestion) >= 0) {
                 askia.triggerAnswer();
             }
 		}
@@ -417,7 +424,10 @@
 				$container.isotope('updateSortData', $container.find('.statement'));
 				$container.isotope(istopeOptions);
 			}
-            if (window.askia) {
+            if (window.askia 
+                && window.arrLiveRoutingShortcut 
+                && window.arrLiveRoutingShortcut.length > 0
+                && window.arrLiveRoutingShortcut.indexOf(options.currentQuestion) >= 0) {
                 askia.triggerAnswer();
             }
 		}
@@ -431,7 +441,10 @@
 		
 		function writeText() {
 			$( '#'+otherQIDarray[parseInt($(this).data('id'))-1] ).val( $(this).val() );
-            if (window.askia) {
+            if (window.askia 
+                && window.arrLiveRoutingShortcut 
+                && window.arrLiveRoutingShortcut.length > 0
+                && window.arrLiveRoutingShortcut.indexOf(options.currentQuestion) >= 0) {
                 askia.triggerAnswer();
             }
 		

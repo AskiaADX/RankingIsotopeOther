@@ -1,4 +1,4 @@
-﻿/* standard_default.js */
+/* standard_default.js */
 $(window).load(function() {
 	$('#adc_{%= CurrentADC.InstanceId %}').adcRanking({
 		maxWidth : '{%= CurrentADC.PropValue("maxWidth") %}',
@@ -21,6 +21,7 @@ $(window).load(function() {
 		dkActivated : {%= (CurrentADC.PropValue("dkActivated") = "1") %},
 		animatedResponses : {%= (CurrentADC.PropValue("animatedResponses") = "1") %},
 		layout : '{%= CurrentADC.PropValue("responseLayout") %}',
+      	currentQuestion: '{%:= CurrentQuestion.Shortcut %}',
 		items : [
 			{%:= CurrentADC.GetContent("dynamic/standard_numeric.js").ToText()%}
 		]
