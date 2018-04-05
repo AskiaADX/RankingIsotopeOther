@@ -7,7 +7,7 @@
   <info>
     <name>RankingIsotopeOther</name>
     <guid>918f40bc-c410-47bf-8cef-233d411c142f</guid>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
     <date>2015-07-03</date>
     <description><![CDATA[v1.1.2 - removed CSS3 Pie
 		v1.1.3 - enabled control to be used in loops
@@ -19,7 +19,8 @@
 		v1.1.7 - fixed input text not shown when going back in the screen
 		v1.1.7 - added animatedResponses param
 		v2.0.0 - theme implementation
-		v2.0.2 - Fixed visibility of the control]]></description>
+		v2.0.2 - Fixed visibility of the control
+		v2.0.3 - Fixed hover styling for small screen]]></description>
     <company>Askia</company>
     <author><![CDATA[Paul Ferreira <paulf@askia.com>        Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>

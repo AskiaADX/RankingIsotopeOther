@@ -110,7 +110,19 @@ Dim otherBorderRadius =CurrentADC.PropValue("otherBorderRadius")
 	-moz-box-shadow: {%= responseHoverShadow%};
 	box-shadow: {%= responseHoverShadow%};
 }
+@media screen and (max-width: 800px) {
+    #adc_{%= CurrentADC.InstanceId%} .statement:hover {
 
+        /* Decoration */
+        border: {%= borderThickness%} {%= borderStyle%} rgb({%= borderColour%});
+        {% IF showResponseHoverColour = "1" Then %}
+        background-color: rgb({%= responseColourPrimary%});
+        {% EndIF %}
+        -webkit-box-shadow: {%= responseShadow%};
+        -moz-box-shadow: {%= responseShadow%};
+        box-shadow: {%= responseShadow%};
+    }
+}
 #adc_{%= CurrentADC.InstanceId%} .statement img
 {  
 	float:{%= responseImagePosition%};
@@ -132,7 +144,13 @@ Dim otherBorderRadius =CurrentADC.PropValue("otherBorderRadius")
 		color:rgb({%= responseHoverFontColour%});
 	{% EndIF %}
 }
-
+@media screen and (max-width: 800px) {
+    #adc_{%= CurrentADC.InstanceId%} .statement:hover .statement_text, #adc_{%= CurrentADC.InstanceId%} .statement:hover .rank_text  { 
+        {% IF showResponseHoverFontColour = "1" Then %}
+        color:rgb({%= fontColour %});
+        {% EndIF %}
+    }
+}
 #adc_{%= CurrentADC.InstanceId%} .statement.ranked 
 {
     /* Decoration */
