@@ -19,12 +19,16 @@ $(window).load(function() {
 		otherRID : '{%= CurrentADC.PropValue("otherRID") %}',
 		otherQID : '{%= CurrentADC.PropValue("otherQID") %}',
 		setMax : parseInt('{%= CurrentADC.PropValue("maxRankedItems") %}'),
-		dkActivated : {%= (CurrentADC.PropValue("dkActivated") = "1") %},
+		dkActivated : {%= On( (CurrentQuestion.Type = "multiple" and CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count].IsExclusive)  or (CurrentADC.PropValue("dkActivated") = "1"),1,0) %},
 		animatedResponses : {%= (CurrentADC.PropValue("animatedResponses") = "1") %},
 		layout : '{%= CurrentADC.PropValue("responseLayout") %}',
       	currentQuestion: '{%:= CurrentQuestion.Shortcut %}',
 		items : [
+      		{% If (CurrentQuestion.Type = "numeric" ) Then %}
 			{%:= CurrentADC.GetContent("dynamic/standard_numeric.js").ToText()%}
+      		{% Else %}
+      		{%:= CurrentADC.GetContent("dynamic/standard_multiple.js").ToText()%}
+      		{% EndIf %}
 		]
 	});
 });
