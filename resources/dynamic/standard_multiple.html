@@ -23,7 +23,7 @@ For i = 1 To ar.Count
 %}
 <div class="istope-item statement" data-value="{%= inputValue %}" data-index="{%= index %}" unselectable='on' onselectstart='return false;'>
 	{% IF image <> "" Then %}
-		<img src="{%= image %}" />
+    <img src="{%= image %}" alt="{%:= caption %}" />
     {% EndIF %}
     <span class="rank_text"></span>
 	<span class="statement_text">{%:= caption %}</span>
@@ -31,7 +31,7 @@ For i = 1 To ar.Count
 	{% For k = 1 To otherIDarray.Count 
 		otherID = otherIDarray[k].ToNumber()
 		IF index = otherID Then %}
-			<div><textarea class="otherText" data-id="{%= k %}" unselectable='off' onselectstart='return true;'></textarea></div>
+    <div><label for="textarea_{%= k %}" hidden>Other text</label><textarea id="textarea_{%= k %}" class="otherText" data-id="{%= k %}" unselectable='off' onselectstart='return true;'></textarea></div>
 			<div style="clear:both"></div>
 		{% EndIF %}
 	{% Next %}
