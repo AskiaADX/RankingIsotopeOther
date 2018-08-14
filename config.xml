@@ -24,7 +24,7 @@
 		v2.0.4 - Added compatibility with multiple
 		v2.0.5 - Added management of 2 exclusives responses
 		v2.0.6 - Added alt attribute to img
-			   - Added hidden labels to inputs number and textarea]]></description>
+			  - Added aria-labels to inputs number and textarea]]></description>
     <company>Askia</company>
     <author><![CDATA[Paul Ferreira <paulf@askia.com>        Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
