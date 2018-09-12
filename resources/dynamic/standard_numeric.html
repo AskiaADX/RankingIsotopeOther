@@ -23,7 +23,7 @@ For i = 1 To ar.Count
 %}
 <div class="istope-item statement" data-value="{%= inputValue %}" data-index="{%= index %}" unselectable='on' onselectstart='return false;'>
 	{% IF image <> "" Then %}
-    <img src="{%= image %}" alt="{%:= caption %}" />
+		<img src="{%= image %}" />
     {% EndIF %}
     <span class="rank_text"></span>
 	<span class="statement_text">{%:= caption %}</span>
