@@ -19,7 +19,7 @@ $(window).load(function() {
 		otherRID : '{%= CurrentADC.PropValue("otherRID") %}',
 		otherQID : '{%= CurrentADC.PropValue("otherQID") %}',
 		setMax : parseInt('{%= CurrentADC.PropValue("maxRankedItems") %}'),
-		dkActivated : {%= On((CurrentQuestion.Type = "multiple" and CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count].IsExclusive and CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count - 1].IsExclusive)  or (CurrentADC.PropValue("dkActivated") = "2"),2,On((CurrentQuestion.Type = "multiple" and CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count].IsExclusive)  or (CurrentADC.PropValue("dkActivated") = "1"),1,0)) %},
+		dkActivated : {% If (CurrentQuestion.Type = "multiple") Then %}{% If (CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count].IsExclusive and CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count - 1].IsExclusive) Then %}2{% ElseIf (CurrentQuestion.AvailableResponses[CurrentQuestion.AvailableResponses.Count].IsExclusive) Then %}1{% Else %}0{% EndIf %}{% Else %}{% If (CurrentADC.PropValue("dkActivated") = "2") Then %}2{% ElseIf (CurrentADC.PropValue("dkActivated") = "1") Then %}1{% Else %}0{% EndIf %}{% EndIf %},
 		animatedResponses : {%= (CurrentADC.PropValue("animatedResponses") = "1") %},
 		layout : '{%= CurrentADC.PropValue("responseLayout") %}',
       	currentQuestion: '{%:= CurrentQuestion.Shortcut %}',
