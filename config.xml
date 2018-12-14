@@ -7,7 +7,7 @@
   <info>
     <name>RankingIsotopeOther</name>
     <guid>918f40bc-c410-47bf-8cef-233d411c142f</guid>
-    <version>2.0.6</version>
+    <version>3.0.0</version>
     <date>2015-07-03</date>
     <description><![CDATA[v1.1.2 - removed CSS3 Pie
 		v1.1.3 - enabled control to be used in loops
@@ -23,7 +23,8 @@
 		v2.0.3 - Fixed hover styling for small screen
 		v2.0.4 - Added compatibility with multiple
 		v2.0.5 - Added management of 2 exclusives responses
-		v2.0.6 - Fixed On by If]]></description>
+		v2.0.6 - Fixed On by If
+		v3.0.0 - AvailableAnswers]]></description>
     <company>Askia</company>
     <author><![CDATA[Paul Ferreira <paulf@askia.com>        Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
@@ -33,7 +34,7 @@
       <category>Ranking</category>
     </categories>
     <constraints>
-      <constraint on="questions" multiple="true" numeric="true" chapter="false" date="false" open="false" requireParentLoop="false" single="false" />
+      <constraint on="questions" multiple="true" numeric="true" chapter="false" date="false" open="false" requireParentLoop="false" single="false" RequireLoopDepth="false" />
       <constraint on="controls" responseblock="true" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="false" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
