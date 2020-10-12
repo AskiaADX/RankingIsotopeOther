@@ -7,26 +7,11 @@
   <info>
     <name>RankingIsotopeOther</name>
     <guid>918f40bc-c410-47bf-8cef-233d411c142f</guid>
-    <version>3.0.0</version>
-    <date>2015-07-03</date>
-    <description><![CDATA[v1.1.2 - removed CSS3 Pie
-		v1.1.3 - enabled control to be used in loops
-		v1.1.4 - fixed image loading glitch
-			   - updated jquery to v1.11.1
-		v1.1.5 - added dk option
-		v1.1.6 - fixed dk page reload
-		v1.1.6 - fixed exclusive
-		v1.1.7 - fixed input text not shown when going back in the screen
-		v1.1.7 - added animatedResponses param
-		v2.0.0 - theme implementation
-		v2.0.2 - Fixed visibility of the control
-		v2.0.3 - Fixed hover styling for small screen
-		v2.0.4 - Added compatibility with multiple
-		v2.0.5 - Added management of 2 exclusives responses
-		v2.0.6 - Fixed On by If
-		v3.0.0 - AvailableAnswers]]></description>
+    <version>4.0.0</version>
+    <date>2020-10-08</date>
+    <description><![CDATA[]]></description>
     <company>Askia</company>
-    <author><![CDATA[Paul Ferreira <paulf@askia.com>        Jerome Duparc <jeromed@askia.com>]]></author>
+    <author><![CDATA[Paul Ferreira <paulf@askia.com>  Jerome Duparc <jeromed@askia.com>]]></author>
     <site>http://www.askia.com</site>
     <helpURL>https://dev.askia.com</helpURL>
     <categories>
@@ -34,7 +19,7 @@
       <category>Ranking</category>
     </categories>
     <constraints>
-      <constraint on="questions" multiple="true" numeric="true" chapter="false" date="false" open="false" requireParentLoop="false" single="false" requireLoopDepth="0" />
+      <constraint on="questions" multiple="true" numeric="true" chapter="false" date="false" open="false" requireParentLoop="false" single="false" requireLoopDepth="0" manageHeader="true" manageSemiOpen="true"/>
       <constraint on="controls" responseblock="true" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="false" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
@@ -50,11 +35,11 @@
       <content fileName="standard_multiple.html" type="html" mode="dynamic" position="none" />
       <content fileName="es5-shim.min.js" type="javascript" mode="share" position="foot">
         <yield><![CDATA[
-          
+
           <!--[if lt IE 10]>
             <script type="text/javascript" src="{%= CurrentADC.URLTo("share/es5-shim.min.js") %}"></script>
           <![endif]-->
-          
+
         ]]></yield>
       </content>
       <content fileName="jquery-1.11.1.min.js" type="javascript" mode="share" position="head" />
@@ -190,9 +175,9 @@
     <category id="alignment" name="Alignment">
       <property xsi:type="standardProperty" id="responseTextAlign" name="Response Text Alignment" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          The alignment of the text in the responses
-	        
+
         ]]></description>
         <value><![CDATA[left]]></value>
         <options>
@@ -203,9 +188,9 @@
       </property>
       <property xsi:type="standardProperty" id="responseContentPosition" name="Response Content Position" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set position for response content
-	        
+
         ]]></description>
         <value><![CDATA[left]]></value>
         <options>
@@ -216,9 +201,9 @@
       </property>
       <property xsi:type="standardProperty" id="responseImagePosition" name="Response Image Position" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set position for images in responses in relation to text
-	        
+
         ]]></description>
         <value><![CDATA[right]]></value>
         <options>
@@ -231,9 +216,9 @@
     <category id="layout" name="Layout">
       <property xsi:type="standardProperty" id="responseLayout" name="Response Layout" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set layout of reponses
-	        
+
         ]]></description>
         <value><![CDATA[straightDown]]></value>
         <options>
@@ -266,25 +251,25 @@
       </property>
       <property xsi:type="standardProperty" id="forcedResponseW" name="Forced Response Width" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set forced response width
-			
+
         ]]></description>
         <value></value>
       </property>
       <property xsi:type="standardProperty" id="forcedResponseH" name="Forced Response Height" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set forced response height
-			
+
         ]]></description>
         <value></value>
       </property>
       <property xsi:type="standardProperty" id="forceResponseSize" name="Force Response size" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Set forced response height
-	        
+
         ]]></description>
         <value><![CDATA[no]]></value>
         <options>
@@ -516,25 +501,25 @@
     <category id="images" name="Images">
       <property xsi:type="standardProperty" id="forcedImageW" name="Force Image Width" type="number" mode="static">
         <description><![CDATA[
-          
+
 	          Set max image width
-			
+
         ]]></description>
         <value><![CDATA[100]]></value>
       </property>
       <property xsi:type="standardProperty" id="forcedImageH" name="Forced Image Height" type="number" mode="static">
         <description><![CDATA[
-          
+
 	          Set max image height
-			
+
         ]]></description>
         <value><![CDATA[100]]></value>
       </property>
       <property xsi:type="standardProperty" id="forceImageSize" name="Force image size" type="string" mode="static">
         <description><![CDATA[
-          
+
 	          Force height or width for all images
-	        
+
         ]]></description>
         <value><![CDATA[width]]></value>
         <options>
